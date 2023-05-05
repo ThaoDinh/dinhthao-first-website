@@ -4,14 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/font.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+    <link rel="stylesheet" href="./css/font.css" />
+    <link rel="stylesheet" href="./css/laptop.css" />
+    <link rel="stylesheet" href="./css/tablet.css" />
+    <link rel="stylesheet" href="./css/mobile.css" />
 
-    <title>Assignment 02</title>
+    <title>Assignment 03</title>
   </head>
 
   <body>
@@ -20,12 +28,12 @@
       <img src="images/mine/senda-banner.jpg" alt="Banner sen đá" />
       <div id="banner-text">
         <h1>Đinh Phương Thảo</h1>
-        <span>Full Stack Developer</span>
+        <p>Full Stack Developer</p>
       </div>
     </div>
 
     <!-- Menu / Navigation -->
-    <section id="nav-bar">
+    <section id="nav-bar" class="d-sm-block">
       <nav>
         <a href="#about"><i class="icon-user"></i>Thông tin</a>
         <a href="#personal-info"><i class="icon-doc-text-inv"></i>Lý lịch</a>
@@ -55,19 +63,31 @@
       <!-- Thông tin cá nhân -->
       <div id="personal-info">
         <h2 class="section-title">Thông tin cá nhân</h2>
-        <ul class="mt-40 info text-grey">
-          <li><span>Giới tính</span> : Nữ</li>
-          <li><span>Ngày sinh</span> : 23/04/1998</li>
-          <li><span>Điện thoại</span> : (+84) 917234xxx</li>
-          <li><span>Email</span> : thaodpfx22160@funix.edu.vn</li>
-          <li><span>Địa chỉ</span> : Nam Từ Liêm, Hà Nội, Việt Nam</li>
-          <li><span>Website</span> : https://dpthao.com</li>
-        </ul>
-        <div id="social-accs">
-          <a href="" class="icon-twitter"></a>
-          <a href="" class="icon-facebook"></a>
-          <a href="" class="icon-gplus"></a>
-          <a href="" class="icon-linkedin"></a>
+        <div class="personal-input">
+          <input
+            id="validate-email"
+            type="email"
+            placeholder="Enter email"
+            class="p-1 mb-1 w-100"
+          />
+          <p class="small text-grey">Hãy nhập email để xác thực</p>
+          <button class="btn bg-light-blue px-2 py-1 text-light">Submit</button>
+        </div>
+        <div class="personal-detail hidden">
+          <ul class="mt-40 info text-grey">
+            <li><span>Giới tính</span> : Nữ</li>
+            <li><span>Ngày sinh</span> : 23/04/1998</li>
+            <li><span>Điện thoại</span> : (+84) 917234xxx</li>
+            <li><span>Email</span> : thaodpfx22160@funix.edu.vn</li>
+            <li><span>Địa chỉ</span> : Nam Từ Liêm, Hà Nội, Việt Nam</li>
+            <li><span>Website</span> : https://dpthao.com</li>
+          </ul>
+          <div id="social-accs">
+            <a href="" class="icon-twitter"></a>
+            <a href="" class="icon-facebook"></a>
+            <a href="" class="icon-gplus"></a>
+            <a href="" class="icon-linkedin"></a>
+          </div>
         </div>
       </div>
     </section>
@@ -76,10 +96,13 @@
     <section id="job-info">
       <!-- Job info section: Row 1 -->
       <!-- Kinh nghiệm -->
-      <div id="experiences">
-        <h2 class="job-head">Kinh nghiệm</h2>
+      <div class="job-card">
+        <h2 class="job-head">
+          Kinh nghiệm
+          <button class="job-btn">▼ view more</button>
+        </h2>
         <i class="job-icon ic-toolbox"></i>
-        <ul class="timeline-block job-content">
+        <ul class="job-content timeline-content">
           <li>
             <p>Fullstack Developer - Công ty Cổ phần 4handy Group</p>
             <p class="text-grey">
@@ -109,10 +132,13 @@
         </ul>
       </div>
       <!-- Học vấn -->
-      <div>
-        <h2 class="job-head">Học vấn</h2>
+      <div class="job-card">
+        <h2 class="job-head">
+          Học vấn
+          <button class="job-btn">▼ view more</button>
+        </h2>
         <i class="job-icon ic-pencil"></i>
-        <ul class="timeline-block job-content">
+        <ul class="job-content timeline-content">
           <li>
             <p>Đại học Kinh tế - ĐHQGHN</p>
             <p class="text-grey">
@@ -126,10 +152,13 @@
         </ul>
       </div>
       <!-- Hoạt động -->
-      <div>
-        <h2 class="job-head">Hoạt động</h2>
+      <div class="job-card">
+        <h2 class="job-head">
+          Hoạt động
+          <button class="job-btn">▼ view more</button>
+        </h2>
         <i class="job-icon ic-toolbox"></i>
-        <ul class="timeline-block job-content">
+        <ul class="job-content timeline-content">
           <li>
             <p>VNU UEB-OCU Academic & Cultural Exchange 2018</p>
             <p class="text-grey">
@@ -147,10 +176,13 @@
       </div>
       <!-- Job info: Row 2 -->
       <!-- Sở thích -->
-      <div>
-        <h2 class="job-head">Sở thích</h2>
+      <div class="job-card">
+        <h2 class="job-head">
+          Sở thích
+          <button class="job-btn">▼ view more</button>
+        </h2>
         <i class="job-icon ic-telescope"></i>
-        <div class="job-content" id="hobby">
+        <div class="job-content hobby">
           <div class="hobby-item">
             <i class="circle icon-music"></i>
             <p>Âm nhạc</p>
@@ -170,8 +202,10 @@
         </div>
       </div>
       <!-- Ngôn ngữ -->
-      <div>
-        <h2 class="job-head">Ngôn ngữ</h2>
+      <div class="job-card">
+        <h2 class="job-head">
+          Ngôn ngữ<button class="job-btn">▼ view more</button>
+        </h2>
         <i class="job-icon ic-mic"></i>
         <ul class="job-content level-content">
           <li>
@@ -185,8 +219,10 @@
         </ul>
       </div>
       <!-- Kỹ năng -->
-      <div>
-        <h2 class="job-head">Kỹ năng</h2>
+      <div class="job-card">
+        <h2 class="job-head">
+          Kỹ năng<button class="job-btn">▼ view more</button>
+        </h2>
         <i class="job-icon ic-tools-2"></i>
         <ul class="job-content level-content">
           <li>
@@ -225,7 +261,7 @@
           <!-- cert row -->
           <div class="cert-row">
             <!-- cert 1 -->
-            <div class="cert-block">
+            <div class="cert-card">
               <img
                 src="images/mine/data-arima.png"
                 alt="Cert Khóa học ARIMA Models in Python"
@@ -239,7 +275,7 @@
               </div>
             </div>
             <!-- cert 2 -->
-            <div class="cert-block">
+            <div class="cert-card">
               <img
                 src="images/mine/data-mkt.png"
                 alt="Cert Khóa học Analyzing Marketing Campaigns with pandas"
@@ -257,7 +293,7 @@
           <!-- cert row -->
           <div class="cert-row">
             <!-- cert 3 -->
-            <div class="cert-block">
+            <div class="cert-card">
               <img
                 src="images/mine/mos-excel.png"
                 alt="Cert chứng chỉ MOS Excel"
@@ -268,7 +304,7 @@
               </div>
             </div>
             <!-- cert 4 -->
-            <div class="cert-block">
+            <div class="cert-card">
               <img
                 src="images/mine/mos-word.png"
                 alt="Cert chứng chỉ MOS Word"
@@ -289,13 +325,17 @@
         <h2 class="section-title">Dự án</h2>
         <div class="project-content-container">
           <!-- project 1 -->
-          <div class="project-block">
-            <img src="images/mine/web-cv.png" alt="Ảnh project CV cá nhân" />
-            <div class="project-head">CV Cá nhân</div>
+          <div class="project-card">
+            <a href="pages/cv-charter.html" target="_blank">
+              <img src="images/mine/web-cv.png" alt="Ảnh project CV cá nhân" />
+            </a>
+            <div class="project-head">Digital CV</div>
             <div class="project-sub text-grey">
               <span class="year-blue">2023</span>
-              <span class="icon-user-1">FUNiX</span>
-              <span class="icon-lamp">Developer</span>
+              <span class="org-n-role">
+                <div class="icon-user-1">FUNiX</div>
+                <div class="icon-lamp">Developer</div>
+              </span>
             </div>
             <table class="text-grey">
               <tr>
@@ -315,17 +355,21 @@
               </tr>
             </table>
           </div>
-          <!-- project 3 -->
-          <div class="project-block">
-            <img
-              src="images/mine/web-food.png"
-              alt="Ảnh project web sản phẩm Savor"
-            />
+          <!-- project 2 -->
+          <div class="project-card">
+            <a href="pages/savor-charter.html" target="_blank">
+              <img
+                src="images/mine/web-food.png"
+                alt="Ảnh project web sản phẩm Savor"
+              />
+            </a>
             <div class="project-head">Trang Web sản phẩm Savor</div>
             <div class="project-sub text-grey">
               <span class="year-blue">2022</span>
-              <span class="icon-user-1">4handy</span>
-              <span class="icon-lamp">Developer</span>
+              <span class="org-n-role">
+                <div class="icon-user-1">4handy</div>
+                <div class="icon-lamp">Developer</div>
+              </span>
             </div>
             <table class="text-grey">
               <tr>
@@ -346,16 +390,19 @@
             </table>
           </div>
           <!-- project 3 -->
-          <div class="project-block">
-            <img
-              src="images/mine/web-bake.png"
-              alt="Ảnh project landing page Abby"
-            />
+          <div class="project-card">
+            <a href="pages/abby-charter.html" target="_blank">
+              <img
+                src="images/mine/web-bake.png"
+                alt="Ảnh project landing page Abby"
+            /></a>
             <div class="project-head">Landing page sản phẩm Tết Abby</div>
             <div class="project-sub text-grey">
-              <span class="year-blue">2022</span>
-              <span class="icon-user-1">4handy</span>
-              <span class="icon-lamp">Developer</span>
+              <span class="year-blue">2023</span>
+              <span class="org-n-role">
+                <div class="icon-user-1">4handy</div>
+                <div class="icon-lamp">Developer</div>
+              </span>
             </div>
             <table class="text-grey">
               <tr>
@@ -399,5 +446,13 @@
         </a>
       </div>
     </section>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -1,0 +1,37 @@
+/* https://getbootstrap.com/docs/5.0/layout/breakpoints/#max-width */
+@media screen and (max-width: 991.98px) {
+  h1 {
+    font-size: 2rem;
+  }
+  section > .container {
+    padding: 10%;
+  }
+  #banner {
+    height: auto;
+  }
+
+  #nav-middle {
+    display: none;
+  }
+
+  #job-info {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 90%;
+    gap: 2%;
+  }
+  #job-info > div {
+    margin: 0 5%;
+  }
+
+  .cert-card {
+    flex-direction: column;
+    padding: 10px 20px;
+    width: 100%;
+  }
+  .cert-card img {
+    width: 100%;
+  }
+  .org-n-role {
+    flex-direction: column;
+  }
+}
