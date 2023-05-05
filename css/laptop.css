@@ -191,13 +191,13 @@ nav > a i {
   justify-content: center;
   align-content: center;
   gap: 20px;
-  max-width: 65%;
+  max-width: 70%;
   margin: 10% auto;
 }
-#job-info > div {
+.job-card {
   display: grid;
   grid-template-columns: 60% 40%;
-  grid-template-rows: 8rem auto;
+  grid-template-rows: 10rem auto;
   border: 1px solid var(--grey-primary-color);
 }
 .job-head {
@@ -405,6 +405,7 @@ nav > a i {
 }
 .org-n-role {
   display: flex;
+  gap: 0.5rem;
 }
 table {
   border-collapse: collapse;

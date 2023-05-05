@@ -19,8 +19,9 @@
     max-width: 90%;
     gap: 2%;
   }
-  #job-info > div {
+  .job-card {
     margin: 0 5%;
+    grid-template-rows: 9rem auto;
   }
 
   .cert-card {
