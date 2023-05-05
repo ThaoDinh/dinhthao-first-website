@@ -1,25 +1,33 @@
+:root {
+  --grey-primary-color: #ebebeb;
+  --grey-secondary-color: #f7f7f7;
+  --blue-color: #1d9dd9;
+  --hover-color: rgb(255, 106, 0);
+  --gold-color: #d6c08d;
+}
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
+
 h1,
 h2,
 h3 {
   font-weight: 500;
 }
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 h2 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
 }
 a {
   text-decoration: none;
 }
 
 .bg-grey {
-  background: #f7f7f7;
+  background: var(--grey-secondary-color);
 }
 .section-title {
   margin-bottom: 30px;
@@ -29,18 +37,22 @@ a {
   line-height: 1.5;
 }
 section > .container {
-  width: 1170px;
+  max-width: 992px;
+  width: 100%;
   margin: auto;
   display: block;
-  padding: 40px 50px 20px 50px;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
 }
 
 /* BANNER */
 #banner {
   position: relative;
-  height: 60vh;
   overflow: hidden;
-  background-size: cover;
+  text-align: center;
+  object-fit: cover;
+  background-position: center;
+  height: 60vh;
 }
 #banner img {
   width: 100%;
@@ -61,14 +73,15 @@ section > .container {
   align-items: center;
   gap: 10px;
   position: absolute;
-  top: 30%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
   color: white;
+  width: 100%;
 }
-#banner-text span {
-  color: rgba(238, 238, 238, 0.853);
+#banner-text p {
+  color: var(--grey-primary-color);
 }
 
 /* NAVIGATION */
@@ -83,15 +96,18 @@ nav {
 }
 nav > a {
   display: inline-block;
-  border-left: solid 2px #f7f7f7;
+  border-left: solid 2px var(--grey-secondary-color);
   text-transform: uppercase;
   color: black;
   padding: 10px 20px;
   height: 75px;
 }
+nav > a:last-child {
+  border-right: solid 2px var(--grey-secondary-color);
+}
 nav > a:hover {
-  color: rgb(255, 106, 0);
-  background-color: #f7f7f7;
+  color: var(--hover-color);
+  background-color: var(--grey-secondary-color);
 }
 /* Để căn giữa text theo chiều dọc khi tăng height của nav */
 nav > a:not(#nav-middle)::before {
@@ -101,7 +117,7 @@ nav > a:not(#nav-middle)::before {
   vertical-align: middle;
 }
 nav > a i {
-  color: #1d9dd9;
+  color: var(--blue-color);
 }
 /* Basic: Hiện text họ tên ở giữa nav bav */
 /* #nav-middle {
@@ -143,19 +159,19 @@ nav > a i {
 #about {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: 0;
 }
 #about > div {
   padding: 70px 60px 40px 50px;
 }
 /* Personal Info */
 #personal-info {
-  background-color: #ebebeb;
+  background-color: var(--grey-primary-color);
   display: flex;
   flex-direction: column;
 }
 #personal-info ul {
   margin-bottom: 20px;
+  padding-left: 0;
 }
 #personal-info li {
   list-style-type: none;
@@ -165,7 +181,7 @@ nav > a i {
   color: black;
 }
 #social-accs a {
-  color: #1d9dd9;
+  color: var(--blue-color);
 }
 
 /* ---JOB INFO SECTION--- */
@@ -174,16 +190,31 @@ nav > a i {
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-content: center;
-  gap: 30px;
+  gap: 20px;
   max-width: 65%;
-  margin: 30px auto;
+  margin: 10% auto;
 }
 #job-info > div {
   display: grid;
   grid-template-columns: 60% 40%;
   grid-template-rows: 8rem auto;
-  border: 1px solid #ebebeb;
-  padding-bottom: 50px;
+  border: 1px solid var(--grey-primary-color);
+}
+.job-head {
+  margin: 40px 0 40px 30px;
+}
+.job-btn {
+  display: block;
+  border: none;
+  background-color: rgb(246, 246, 168);
+  color: grey;
+  margin-top: 10px;
+  padding: 6px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: x-small;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 #job-info .job-icon {
   color: grey;
@@ -191,25 +222,23 @@ nav > a i {
   text-align: center;
   margin: 40px 0;
 }
-.job-head {
-  margin: 40px 0 40px 30px;
-}
 .job-content {
   grid-column: 1/-1;
+  padding-bottom: 3rem;
 }
 /* Dòng 1 - Các nội dung theo timeline */
-.timeline-block {
+.timeline-content {
   grid-row: 2;
   display: flex;
   flex-direction: column;
   gap: 35px;
   padding: 0 30px 0 50px;
 }
-.timeline-block li {
+.timeline-content li {
   padding-left: 10px;
 }
-.timeline-block li::marker {
-  color: #1d9dd9;
+.timeline-content li::marker {
+  color: var(--blue-color);
   display: inline-block;
   font-size: 30px;
   line-height: 0;
@@ -221,19 +250,20 @@ nav > a i {
 .current {
   display: inline-block;
   padding: 0 10px;
-  background-color: #1d9dd9;
+  background-color: var(--blue-color);
   color: white;
   border-radius: 6px;
 }
 /* Dòng 2 - Các nội dung không theo timeline */
 /* Sở thích */
-#hobby {
+.hobby {
   display: flex;
-  padding: 0 10%;
+  padding: 0 1rem;
   gap: 20px;
   justify-content: center;
   align-items: start;
 }
+
 .hobby-item i {
   display: flex;
   justify-content: center;
@@ -244,14 +274,14 @@ nav > a i {
   text-align: center;
   font-size: 13px;
 }
-.circle {
+.hobby-item .circle {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  border: 1px solid #1d9dd9;
+  border: 1px solid var(--blue-color);
   text-align: center;
   font-size: 1.5rem;
-  color: #1d9dd9;
+  color: var(--blue-color);
 }
 /* Ngôn ngữ - Kĩ năng  */
 .level-content {
@@ -270,16 +300,13 @@ nav > a i {
   margin-right: 10px;
 }
 .blue-bar {
-  background: #1d9dd9;
+  background: var(--blue-color);
 }
 .grey-bar {
-  background: #e0e0e0;
+  background: var(--grey-primary-color);
 }
 
 /* ---CERTIFICATE SECTION--- */
-#certificate .section-title {
-  margin-bottom: 40px;
-}
 .cert-content-container {
   display: flex;
   flex-direction: column;
@@ -290,24 +317,28 @@ nav > a i {
 }
 .cert-row {
   display: flex;
-  border-bottom: solid 1px #d6c08d;
+  border-bottom: solid 1px var(--gold-color);
   padding-bottom: 40px;
 }
-.cert-row .cert-block:first-child {
+.cert-card:first-child {
   border-left: 0;
   padding-left: 0;
 }
-.cert-block {
+.cert-card:last-child {
+  padding-right: 0;
+}
+.cert-card {
   display: flex;
   gap: 20px;
   width: 50%;
-  height: 7rem;
+  height: auto;
   padding-left: 20px;
-  padding-right: 50px;
-  border-left: solid 1px #d6c08d;
+  padding-right: 20px;
+  border-left: solid 1px var(--gold-color);
 }
-.cert-block img {
+.cert-card img {
   width: 50%;
+  object-fit: contain;
 }
 .cert-detail p {
   text-transform: uppercase;
@@ -324,21 +355,24 @@ nav > a i {
   display: flex;
   gap: 20px;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   padding-bottom: 30px;
+  flex-wrap: wrap;
 }
-.project-block {
+.project-card {
   display: flex;
   flex-direction: column;
   width: 31%;
   justify-content: flex-start;
   font-size: 14px;
 }
-.project-block img {
+
+.project-card img {
+  width: 100%;
   height: 14rem;
 }
-.project-block > div {
-  border: solid 1px #e0e0e0;
+.project-card > div {
+  border: solid 1px var(--grey-primary-color);
   border-bottom: 0;
 }
 .project-head {
@@ -353,11 +387,11 @@ nav > a i {
   gap: 10px;
   height: 20%;
   padding: 8px 20px;
-  border-bottom: solid 1px #e0e0e0;
+  border-bottom: solid 1px var(--grey-primary-color);
 }
 .year-blue {
   font-size: 12px;
-  background-color: #1d9dd9;
+  background-color: var(--blue-color);
   border-radius: 12px;
   color: white;
   text-align: center;
@@ -369,11 +403,14 @@ nav > a i {
   height: 100%;
   vertical-align: middle;
 }
+.org-n-role {
+  display: flex;
+}
 table {
   border-collapse: collapse;
 }
 tr {
-  border: solid 1px #e0e0e0;
+  border: solid 1px var(--grey-primary-color);
 }
 td {
   padding: 10px;
@@ -396,8 +433,24 @@ td {
 }
 #footer i {
   font-size: 2rem;
-  color: #1d9dd9;
+  color: var(--blue-color);
 }
 #footer a:hover {
-  color: rgb(255, 106, 0);
+  color: var(--hover-color);
+}
+
+/* ---ASM3--- */
+.hidden {
+  display: none;
+}
+
+.bg-light-blue {
+  background-color: var(--blue-color);
+}
+
+.btn:hover {
+  background-color: var(--hover-color);
+}
+.circle {
+  width: fit-content;
 }
