@@ -42,7 +42,6 @@ document.querySelectorAll(".job-card").forEach((cardElem) => {
   viewBtn.addEventListener("click", function () {
     contentElem.classList.toggle("hidden");
     if (contentElem.classList.contains("hidden")) {
-      console.log(1);
       viewBtn.innerHTML = "▼ view more";
     } else {
       viewBtn.innerHTML = "▲ view less";

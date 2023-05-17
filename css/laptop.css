@@ -50,7 +50,6 @@ section > .container {
   position: relative;
   overflow: hidden;
   text-align: center;
-  object-fit: cover;
   background-position: center;
   height: 60vh;
 }
@@ -95,7 +94,6 @@ nav {
   padding: 0;
 }
 nav > a {
-  display: inline-block;
   border-left: solid 2px var(--grey-secondary-color);
   text-transform: uppercase;
   color: black;
@@ -147,8 +145,7 @@ nav > a i {
   border: solid 5px white;
   border-radius: 50%;
   width: 12rem;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  box-shadow: rgba(27, 31, 35, 0.15) 0px 0px 0px 1.5px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
