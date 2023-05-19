@@ -259,6 +259,7 @@ nav > a i {
   gap: 20px;
   justify-content: center;
   align-items: start;
+  flex-wrap: wrap;
 }
 
 .hobby-item i {
@@ -266,19 +267,16 @@ nav > a i {
   justify-content: center;
   align-items: center;
   margin: 0 auto 5px auto;
-}
-.hobby-item p {
-  text-align: center;
-  font-size: 13px;
-}
-.hobby-item .circle {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
   border: 1px solid var(--blue-color);
-  text-align: center;
   font-size: 1.5rem;
   color: var(--blue-color);
+}
+.hobby-item p {
+  text-align: center;
+  font-size: 13px;
 }
 /* Ngôn ngữ - Kĩ năng  */
 .level-content {
