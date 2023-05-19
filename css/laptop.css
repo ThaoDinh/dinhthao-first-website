@@ -260,6 +260,7 @@ nav > a i {
   justify-content: center;
   align-items: start;
   flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 .hobby-item i {
